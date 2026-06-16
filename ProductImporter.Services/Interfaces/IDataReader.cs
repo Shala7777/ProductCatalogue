@@ -1,7 +1,8 @@
-﻿
-namespace ProductImporter.Services.Interfaces
+﻿using ProductImporter.Models;
+
+namespace ProductImporter.Services.Interfaces;
+
+public interface IDataReader
 {
-    internal interface IDataReader
-    {
-    }
+    IEnumerable<Category> GetData();
 }

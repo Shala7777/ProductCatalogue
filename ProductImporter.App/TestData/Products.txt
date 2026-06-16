@@ -1,0 +1,8 @@
+Category 1	1	001	Product 1	20.99	0	0
+Category 1	1	002	Product 2	12.00	1	1
+Category 2	1	004	Product 4	20.99	150	1
+Category 2	1	005	Product 5	14.99	0	0
+Category 3	1	006	Product 6	21.00	70	1
+Category 1	1	003	Product 8	19.99	58	1
+Category 4	1	007	Product 7	19.99	58	1
+Category 5	1	008	Product 3	19.99	58	1
