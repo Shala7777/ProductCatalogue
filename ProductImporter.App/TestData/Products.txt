@@ -1,8 +1,40 @@
-Category 1	1	001	Product 1	20.99	0	0
-Category 1	1	002	Product 2	12.00	1	1
-Category 2	1	004	Product 4	20.99	150	1
-Category 2	1	005	Product 5	14.99	0	0
-Category 3	1	006	Product 6	21.00	70	1
-Category 1	1	003	Product 8	19.99	58	1
-Category 4	1	007	Product 7	19.99	58	1
-Category 5	1	008	Product 3	19.99	58	1
+Electronics	1	001	Samsung TV Pro	599.99	120	1
+Electronics	1	002	Apple iPhone 14	999.00	45	1
+Electronics	1	003	Sony Wireless Headphones	149.99	200	1
+Electronics	1	004	LG 4K Smart TV	429.99	35	1
+Electronics	1	005	Canon DSLR Camera	549.50	18	1
+Electronics	1	006	Logitech Gaming Mouse	39.99	250	1
+Electronics	1	007	Bose Bluetooth Speaker	129.99	80	1
+Electronics	1	008	Apple iPad Air	649.00	52	1
+Electronics	1	009	Samsung Galaxy Watch	229.99	70	1
+Electronics	1	010	Philips Soundbar	179.99	33	1
+Home & Kitchen	1	011	Philips Air Fryer	149.99	60	1
+Home & Kitchen	1	012	Bosch Hand Blender	49.99	120	1
+Home & Kitchen	1	013	Tefal Cookware Set	89.99	75	1
+Home & Kitchen	1	014	KitchenAid Stand Mixer	399.99	15	1
+Home & Kitchen	1	015	Ikea Dining Chair	59.99	180	1
+Home & Kitchen	1	016	Ikea Floor Lamp	39.99	95	1
+Home & Kitchen	1	017	Whirlpool Microwave Oven	179.99	22	1
+Home & Kitchen	1	018	Samsung Refrigerator	799.00	10	1
+Home & Kitchen	1	019	Bosch Washing Machine	699.00	8	1
+Home & Kitchen	1	020	DeLonghi Coffee Maker	129.99	40	1
+Books	1	021	Harry Potter and the Philosopher's Stone	9.99	300	1
+Books	1	022	The Lord of the Rings	19.99	120	1
+Books	1	023	To Kill a Mockingbird	8.99	90	1
+Books	1	024	1984 by George Orwell	7.99	140	1
+Books	1	025	The Great Gatsby	6.99	110	1
+Books	1	026	The Catcher in the Rye	8.50	60	1
+Books	1	027	Sapiens: A Brief History of Humankind	14.99	75	1
+Books	1	028	Atomic Habits	16.99	80	1
+Books	1	029	The Subtle Art of Not Giving a F*ck	13.99	65	1
+Books	1	030	Thinking, Fast and Slow	15.99	55	1
+Clothing	1	031	Nike Running Shoes	89.99	200	1
+Clothing	1	032	Adidas Soccer Jersey	59.99	130	1
+Clothing	1	033	Levi's 501 Jeans	79.99	90	1
+Clothing	1	034	H&M Cotton T-Shirt	14.99	400	1
+Clothing	1	035	Zara Denim Jacket	69.99	70	1
+Clothing	1	036	The North Face Hoodie	89.99	50	1
+Clothing	1	037	Puma Training Shorts	29.99	150	1
+Clothing	1	038	Calvin Klein Boxer Briefs	24.99	180	1
+Clothing	1	039	Columbia Winter Jacket	129.99	35	1
+Clothing	1	040	Under Armour Sports Bra	34.99	95	1
