@@ -68,7 +68,7 @@ public sealed class CsvFileDataReader : IDataReader
         return category;
     }
 
-    public void ValidateTokens(string[] tokens)
+    private void ValidateTokens(string[] tokens)
     {
         if (tokens.Length != ExpectedTokenCount)
             throw new FormatException($"Invalid number of tokens. Expected {ExpectedTokenCount} but got {tokens.Length}.");

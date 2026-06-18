@@ -15,7 +15,7 @@ internal class Program
             importerService.OnImportStarted += () => Console.WriteLine("Import started.");
             importerService.OnImportProgress += () => Console.Write($"\rImport progress");
             importerService.OnImportCompleted += () => Console.WriteLine("\nImport completed successfully.");
-            importerService.OnImportError += () => Console.WriteLine("\nAn error occurred during import.");
+            importerService.OnImportError += (ex) => Console.WriteLine($"\nAn error occurred during import: {ex.Message}");
             importerService.ImportData();
 
             foreach (var category in dataReader.GetData())
