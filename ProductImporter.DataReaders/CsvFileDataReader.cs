@@ -6,6 +6,11 @@ public sealed class CsvFileDataReader : IDataReader
     private const int ExpectedTokenCount = 7;
     private const int CategoryNameIndex = 0;
     private const int CategoryIsDeletedIndex = 1;
+    private const int productCodeIndex = 2;
+    private const int ProductNamaIndex = 3;
+    private const int ProductQuantityIndex = 4;
+    private const int ProductPriceIndex = 5;
+    private const int ProductIsDeletedIndex = 6;
 
     private readonly string _filePath;
 
@@ -45,11 +50,11 @@ public sealed class CsvFileDataReader : IDataReader
     {
         category.Products.Add(new Product
         {
-            Code = tokens[2],
-            Name = tokens[3],
-            Price = decimal.Parse(tokens[4]),
-            Quantity = float.Parse(tokens[5]),
-            IsActive = tokens[6] == "1"
+            Code = tokens[productCodeIndex],
+            Name = tokens[ProductNamaIndex],
+            Price = decimal.Parse(tokens[ProductQuantityIndex]),
+            Quantity = float.Parse(tokens[ProductPriceIndex]),
+            IsActive = tokens[ProductIsDeletedIndex] == "1"
         });
     }
 
