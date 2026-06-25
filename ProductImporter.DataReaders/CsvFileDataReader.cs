@@ -3,15 +3,6 @@ using ProductImporter.Services.Interfaces;
 
 public sealed class CsvFileDataReader : IDataReader
 {
-    private const int ExpectedTokenCount = 7;
-    private const int CategoryNameIndex = 0;
-    private const int CategoryIsDeletedIndex = 1;
-    private const int productCodeIndex = 2;
-    private const int ProductNamaIndex = 3;
-    private const int ProductQuantityIndex = 4;
-    private const int ProductPriceIndex = 5;
-    private const int ProductIsDeletedIndex = 6;
-
     private readonly string _filePath;
 
     public CsvFileDataReader(FileInfo fileInfo)
@@ -20,14 +11,17 @@ public sealed class CsvFileDataReader : IDataReader
             throw new ArgumentNullException(nameof(fileInfo));
         if (string.IsNullOrWhiteSpace(fileInfo.FullName))
             throw new ArgumentException("File path cannot be null or whitespace.", nameof(fileInfo.FullName));
-        if (!File.Exists(fileInfo.FullName))
-            throw new FileNotFoundException("The specified file was not found.", fileInfo.FullName);
 
         _filePath = fileInfo.FullName;
     }
 
     public IEnumerable<Category> GetData()
     {
+        if (!File.Exists(_filePath))
+        {
+            var fileStream = new FileStream(_filePath, FileMode.OpenOrCreate);
+        }
+
         Dictionary<string, Category> categoryDictionary = new Dictionary<string, Category>();
 
         using var reader = new StreamReader(_filePath);
@@ -38,7 +32,7 @@ public sealed class CsvFileDataReader : IDataReader
             string[] tokens = line.Split('\t');
             ValidateTokens(tokens);
 
-            var categoryName = tokens[CategoryNameIndex];
+            var categoryName = tokens[(int)Indexes.CategoryNameIndex];
             var category = GetOrCreateCategory(categoryDictionary, categoryName, tokens);
             AddProductFromTokens(category, tokens);
         }
@@ -50,11 +44,11 @@ public sealed class CsvFileDataReader : IDataReader
     {
         category.Products.Add(new Product
         {
-            Code = tokens[productCodeIndex],
-            Name = tokens[ProductNamaIndex],
-            Price = decimal.Parse(tokens[ProductQuantityIndex]),
-            Quantity = float.Parse(tokens[ProductPriceIndex]),
-            IsActive = tokens[ProductIsDeletedIndex] == "1"
+            Code = tokens[(int)Indexes.productCodeIndex],
+            Name = tokens[(int)Indexes.ProductNamaIndex],
+            Price = decimal.Parse(tokens[(int)Indexes.ProductQuantityIndex]),
+            Quantity = float.Parse(tokens[(int)Indexes.ProductPriceIndex]),
+            IsActive = tokens[(int)Indexes.ProductIsDeletedIndex] == "1"
         });
     }
 
@@ -65,7 +59,7 @@ public sealed class CsvFileDataReader : IDataReader
             category = new Category
             {
                 Name = categoryName,
-                IsActive = tokens[CategoryIsDeletedIndex] == "1"
+                IsActive = tokens[(int)Indexes.CategoryIsDeletedIndex] == "1"
             };
             categories.Add(categoryName, category);
         }
@@ -75,7 +69,7 @@ public sealed class CsvFileDataReader : IDataReader
 
     private void ValidateTokens(string[] tokens)
     {
-        if (tokens.Length != ExpectedTokenCount)
-            throw new FormatException($"Invalid number of tokens. Expected {ExpectedTokenCount} but got {tokens.Length}.");
+        if (tokens.Length != (int)Indexes.ExpectedTokenCount)
+            throw new FormatException($"Invalid number of tokens. Expected {(int)Indexes.ExpectedTokenCount} but got {tokens.Length}.");
     }
 }
