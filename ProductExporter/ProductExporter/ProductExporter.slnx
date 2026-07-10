@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="ProductExporter.DataWriter/ProductExporter.DataWriter.csproj" />
+  <Project Path="ProductExporter.Services/ProductExporter.Services.csproj" />
   <Project Path="ProductExporter/ProductExporter.App.csproj" />
 </Solution>
