@@ -1,6 +1,8 @@
-﻿
+﻿using System.Data;
+
 namespace ProductExporter.Services.Interfaces;
 
-public interface IDataReader
+public interface IDataTableReader
 {
+    DataTable GetData();
 }
