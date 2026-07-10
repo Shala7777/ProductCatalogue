@@ -17,20 +17,10 @@ internal class Program
             importerService.OnImportCompleted += () => Console.WriteLine("\nImport completed successfully.");
             importerService.OnImportError += (ex) => Console.WriteLine($"\nAn error occurred during import: {ex.Message}");
             importerService.ImportData();
-
-            foreach (var category in dataReader.GetData())
-            {
-                Console.WriteLine($"\nCategory: {category.Name}");
-                foreach (var product in category.Products)
-                {
-                    Console.WriteLine($"  Product: {product.Name}, Price: {product.Price}");
-                }
-            }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error: {ex.Message}");
-            return;
         }
     }
 }

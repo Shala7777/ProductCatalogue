@@ -1,6 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using System.Data;
-using System.Transactions;
+﻿using System.Data;
 
 namespace ProductImporter.Services;
 
@@ -42,6 +40,8 @@ public sealed class ProductImporterService
             {
                 ProcessCategory(command, category);
             }
+            OnImportProgress?.Invoke();
+
             transaction?.Commit();
         }
         catch (Exception ex)

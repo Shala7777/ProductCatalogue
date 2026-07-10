@@ -19,7 +19,7 @@ public sealed class CsvFileDataReader : IDataReader
     {
         if (!File.Exists(_filePath))
         {
-            var fileStream = new FileStream(_filePath, FileMode.OpenOrCreate);
+            var fileStream = new FileStream(_filePath, FileMode.OpenOrCreate, FileAccess.Read);
         }
 
         Dictionary<string, Category> categoryDictionary = new Dictionary<string, Category>();
