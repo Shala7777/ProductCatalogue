@@ -13,7 +13,9 @@ public sealed class CsvFileDataWriter
 
     public void WriteDataToFile()
     {
-        using var fileStream = new FileStream(_filePath, FileMode.OpenOrCreate, FileAccess.Write);
+        EnsureDiracroty(_filePath);
+
+        using var fileStream = new FileStream(_filePath, FileMode.Create, FileAccess.Write);
         using var writer = new StreamWriter(fileStream);
 
         for (int i = 0; i < _dataTableReader.GetData().Rows.Count; i++)
@@ -38,5 +40,13 @@ public sealed class CsvFileDataWriter
                              $"{(productIsActive ? 1 : 0)}"
                              );
         }
+    }
+
+    private static void EnsureDiracroty(string filePath)
+    {
+        string directory = Path.GetDirectoryName(filePath)!;
+
+        if (!Directory.Exists(directory))
+            Directory.CreateDirectory(directory);
     }
 }
