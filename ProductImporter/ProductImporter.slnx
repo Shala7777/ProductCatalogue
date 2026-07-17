@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ProductImporter.App/ProductImporter.App.csproj" />
+  <Project Path="ProductImporter.DataReaders/ProductImporter.DataReaders.csproj" />
+  <Project Path="ProductImporter.Models/ProductImporter.Models.csproj" />
+  <Project Path="ProductImporter.Services/ProductImporter.Services.csproj" />
+</Solution>
