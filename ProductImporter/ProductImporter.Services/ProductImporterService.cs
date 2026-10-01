@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.Common;
 
 namespace ProductImporter.Services;
 
@@ -62,7 +63,7 @@ public sealed class ProductImporterService
     {
         string[] parameterNames =
         {
-            "@CategoryName",
+            "@Category",
             "@CategoryIsDeleted",
             "@ProductCode",
             "@ProductName",

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CustomDapper/DatabaseHelper.App.csproj" />
+  <Project Path="DatabaseHelper.Common/DatabaseHelper.Common.csproj" Id="8ee21e5a-2386-4a72-911a-bda168325590" />
+  <Project Path="DatabaseHelper.Oracle/DatabaseHelper.Oracle.csproj" Id="42837f51-1605-47a2-8863-62c4894aefa2" />
+  <Project Path="DatabaseHelper.Postgre/DatabaseHelper.Postgre.csproj" Id="7c190bbf-82e9-4c53-b559-24dcafd36d81" />
+  <Project Path="DatabaseHelper.SqlServer/DatabaseHelper.SqlServer.csproj" Id="d32e1db0-d326-4ee9-9708-3f52d50ae0f1" />
+</Solution>
